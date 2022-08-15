@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;900&display=swap');
+
+/*Style reset*/
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    border: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img,
+svg,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*Style*/
+:root {
+    --clr-accent-orange: hsl(22, 89%, 52%);
+    --clr-accent-light-orange: hsl(22, 100%, 69%);
+
+    --clr-primary-dark-graphite: hsl(220, 50%, 17%);
+    --clr-primary-light-graphite: hsl(221, 23%, 58%);
+    --clr-neutral-light-gray: hsl(198, 28%, 93%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+    --ff-primary: 'Barlow', sans-serif;
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+    --ff-button: var(--ff-primary);
+
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-extra-bold: 900;
+
+    /*    Font sizes*/
+    --fs-300: 1rem;
+    --fs-400: 1.125rem; /*18px*/
+    --fs-500: 1.5rem; /*24px*/
+    --fs-700: 2rem; /*32px*/
+    --fs-800: 3rem; /*48px*/
+    --fs-900: 3.5rem; /*56px*/
+
+
+    /* Font height */
+    --fh-300: 1rem;
+    --fh-400: 1.125rem;
+    --fh-500: 1.5rem;
+    --fh-600: 1.625rem;
+    --fh-700: 2rem;
+    --fh-750: 2.25rem;
+    --fh-800: 3rem;
+    --fh-900: 3.5rem;
+
+
+
+    /*    Fonts mobile*/
+    --fs-hero-heading: var(--fs-800);
+    --fs-hero-body: var(--fs-300);
+    --fs-button: var(--fs-300);
+    --fs-headline-big: var(--fs-700);
+    --fs-headline-small: var(--fs-500);
+    --fs-body: var(--fs-300);
+    --fs-footer: var(--fs-300);
+
+    --fh-hero-height: var(--fh-800);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.container {
+    width: 69em;
+    margin: 0 10em;
+}
+
+.even-columns {
+    display: flex;
+    gap: 2rem;
+}
+
+
+/*Utility classes*/
+.text-primary-heading { color: var(--clr-primary-dark-graphite); }
+.text-primary-body { color: var(--clr-primary-light-graphite); }
+
+.fw-bold { font-weight: var(--fw-bold); }
+.fw-regular { font-weight: var(--fw-regular); }
+
+
+.btn {
+    border-radius: 8px;
+    padding: 0.8em 1.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-button);
+    font-family: var(--ff-button);
+}
+
+.nav__button {
+    color: var(--clr-primary-dark-graphite);
+    background-color: var(--clr-neutral-light-gray);
+}
+
+.nav__button:active,
+.nav__button:hover {
+    background-color: var(--clr-primary-dark-graphite);
+    color: var(--clr-neutral-white);
+}
+
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 0 64px 0;
+}
+
+.nav__logo {
+    height: 40px;
+    width: 40px;
+}
+
+.headline {
+    text-transform: uppercase;
+    font-weight: var(--fw-extra-bold);
+    font-family: var(--ff-heading);
+}
+
+.hero__title {
+    font-size: var(--fs-hero-heading);
+    line-height: var(--fh-hero-height);
+    color: var(--clr-primary-dark-graphite);
+    padding-right: 3rem;
+}
+
+.hero__description {
+    font-size: var(--fs-hero-body);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-light-graphite);
+    padding: 1rem 6rem 2rem 0;
+}
+
+.hero__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7rem 0;
+}
+
+.hero__button {
+    color: var(--clr-neutral-white);
+    background-color: var(--clr-accent-orange);
+}
+
+.hero__button:active,
+.hero__button:hover {
+    background-color: var(--clr-accent-light-orange);
+}
+
+.hero__date {
+    color: var(--clr-primary-light-graphite);
+    background-color: transparent;
+    display: inline;
+    padding: 0 2em;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-button);
+}
+
+.img {
+    border-radius: 20px;
+}
+
+.hero__img {
+    width: 100%;
+    background-position: center;
+    background-image: url("./assets/mobile/image-keyboard.jpg");
+}
+
+
+.section-flex {
+    display: flex;
+    gap: 4rem;
+}
+
+.img-overlay {
+    background-color: var(--clr-accent-orange);
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.intro__img-opacity {
+    opacity: 35%;
+}
+
+.img-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 3rem 0;
+
+}
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 25%;
+}
+
+.intro__title {
+    font-size: var(--fs-headline-big);
+    color: var(--clr-primary-dark-graphite);
+    line-height: var(--fh-750);
+}
+
+.intro__description {
+    font-size: var(--fs-body);
+    color: var(--clr-primary-light-graphite);
+    padding-right: 3rem;
+    padding-top: 1.5rem;
+}
+
+
+.features {
+    margin-top: 120px;
+    margin-bottom: 60px;
+}
+
+.icon-background {
+    height: 65px;
+    width: 65px;
+    background-color: var(--clr-accent-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.features__title {
+    font-size: var(--fs-headline-small);
+    padding-right: 3rem;
+    line-height: var(--fh-600);
+}
+
+.features__description {
+    font-size: var(--fs-body);
+    color: var(--clr-primary-light-graphite);
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+}
+
+
+.footer {
+    padding-bottom: 50px;
+}
+
+.footer__text {
+    font-family: var(--ff-body);
+    font-size: var(--fs-footer);
+    color: var(--clr-primary-light-graphite);
+    text-align: center;
+}
+
+.footer__text-bold {
+    font-weight: var(--fw-bold)
+}
+
+
+
+
+@media (min-width: 768px) {
+    .nav {
+        padding: 40px 0 62px 0;
+
+    }
+    .footer {
+        padding-bottom: 43px;
+    }
+
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --fs-hero-heading: var(--fs-900);
+        --fs-hero-body: var(--fs-400);
+
+        --fh-hero-height: var(--fh-900);
+    }
+
+    .nav {
+        padding: 55px 0 83px 0;
+    }
+
+    .footer {
+        padding-bottom: 39px;
+    }
+}
